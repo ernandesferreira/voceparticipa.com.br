@@ -1,0 +1,33 @@
+------------------------------------------------------------
+Version 1.1
+    - Added gform_form_pre_results filter so the form object can be manipulated before the results are calculated for the admin results page
+    - Fixed quiz confirmation messages not appearing below the form confirmation in ajax forms
+
+------------------------------------------------------------
+Version 1.0
+    - Changed confirmation behaviour to ignore a confirmation redirect when grading setting is pass/fail or letter.
+    - Fixed a display issue with confirmation message for multipage and ajax enabled forms
+    - Fixed instant feedback for multipage, ajax enabled forms
+    - Fixed the way the form action submenu works with 1.7
+    - Added tooltips to the results page
+    - Added support for the Gravity Forms MailChimp Add-On. Entry meta (score info) can be mapped to MailChimp fields.
+
+------------------------------------------------------------
+Version 1.0.beta2
+    - Added Quiz Results page with aggregate results and filters
+    - Added a form setting to shuffle quiz fields
+    - Added a form setting to give instant feedback
+    - Added two new filters gquiz_correct_indicator and gquiz_incorrect_indicator
+    Example usage:
+    add_filter( 'gquiz_correct_indicator', 'gquiz_correct_indicator');
+    function gquiz_correct_indicator ($correct_answer_indicator_url){
+        $correct_answer_indicator_url = "http://mydomain.com/correct.png";
+        return $correct_answer_indicator_url;
+    }
+    add_filter( 'gquiz_incorrect_indicator', 'gquiz_incorrect_indicator');
+    function gquiz_incorrect_indicator ($incorrect_answer_indicator_url){
+        $incorrect_answer_indicator_url = "http://mydomain.com/incorrect.png";
+        return $incorrect_answer_indicator_url;
+    }
+    - Fixed an issue with the grades not saving
+    - Added form settings page ready for 1.7
